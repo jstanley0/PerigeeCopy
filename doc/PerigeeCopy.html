@@ -1,0 +1,187 @@
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>PerigeeCopy</title>
+</head>
+<body>
+<h1 style="text-align: center;">PerigeeCopy</h1>
+<div style="text-align: center;">by Jeremy Stanley<br>
+</div>
+<br>
+<br>
+Have you ever carefully selected dozens of files and folders in Windows
+Explorer and dragged them to a destination folder, only to have Windows
+bail out on the whole procedure because one of the source files is
+still in use?&nbsp; Have you ever wished there was a "No to all" option
+on the overwrite prompt dialog?&nbsp; Or for the ability to
+automatically overwrite files only if the source file is newer?<br>
+<br>
+How about deleting files--say you want to clear everything out of the
+temp folder except the two files that are in use.&nbsp; Explorer is
+little help--it will bail as soon as it hits one of them, and refuse to
+delete anything else.&nbsp; Or perhaps, like me, you've been annoyed by
+incessant spurious "Are you sure?" prompts.&nbsp; <br>
+&nbsp;&nbsp;&nbsp; "Are you sure you
+want to delete these files?"&nbsp; Yes. <br>
+&nbsp;&nbsp;&nbsp; "But wait!&nbsp; This
+one's a program file.&nbsp; Are you sure you want to delete it?"&nbsp; <span
+ style="font-weight: bold; font-style: italic;">Yes.</span><br>
+&nbsp;&nbsp;&nbsp; "But wait!&nbsp; This one's read-only!&nbsp; You
+surely
+don't want to delete <span style="font-weight: bold;">it</span>,
+right?!"&nbsp; <br>
+<br>
+I created PerigeeCopy specifically to address these annoyances with
+Windows Explorer's built-in file operations.&nbsp;
+PerigeeCopy is a configurable Win32 shell extension that lets you copy,
+move, and delete files with the ease of Explorer's GUI, while at the
+same time adding additional features and options, not the least of
+which is the ability to resume after errors and retry any failed files
+at the end of the job.&nbsp; <br>
+<br>
+<h2>Download</h2>
+PerigeeCopy is free software licensed under the terms of the <a
+ href="http://www.gnu.org/licenses/gpl.txt">GNU
+GPL</a>.&nbsp; It is distributed in the hope that it will be useful,
+but it provides no warranty.&nbsp; <br>
+<br>
+<a href="http://jstanley.pingerthinger.com/mail.html">Contact me</a>
+with any feature requests or bug reports.<br>
+<br>
+Binaries and source code are included in all downloads.<br>
+<ul>
+  <li><a href="http://jstanley.pingerthinger.com/pscopy-1.7.exe">PerigeeCopy
+1.7 for Windows XP/Vista/7</a> (Supports x86 and x64 platforms)<br>
+  </li>
+  <li><a href="http://jstanley.pingerthinger.com/pscopy-9x-1.2.exe">PerigeeCopy
+1.2 for Windows 9x/Me</a> (Older version; no longer maintained) <span style="color: rgb(204, 0, 0);"><span
+ style="font-weight: bold;"></span></span><br>
+  </li>
+</ul>
+<a href="changelog.html">Change log</a>
+<h2>Invoking PerigeeCopy</h2>
+<ul>
+  <li>Copying and moving files</li>
+  <ul>
+    <li>Copy or cut files and folders to the clipboard normally, using
+Explorer.&nbsp; Then right-click the destination folder, and select
+"PerigeePaste" (instead of "Paste").</li>
+    <ul>
+      <li>Alternatively, check "Use PerigeeCopy by default" in the
+options dialog, and PerigeeCopy will be invoked for all clipboard file
+operations.<br>
+      </li>
+    </ul>
+    <li>Right-drag files and folders, and select "PerigeeCopy Here" or
+"PerigeeMove Here" from the popup menu</li>
+    <ul>
+      <li>Alternatively, check "Use PerigeeCopy by default" in the
+options dialog, and drag-drop files normally.&nbsp; As with Windows
+Explorer, files will be moved when the source and destination folders
+are on the same drive, and copied otherwise.&nbsp; Also, you can force
+a copy by Ctrl+dragging or a move by Shift+dragging.<br>
+      </li>
+    </ul>
+    <ul>
+    </ul>
+  </ul>
+  <li>Deleting files</li>
+  <ul>
+    <li>Select files and folders in Explorer, then right-click and
+select "PerigeeDelete".&nbsp; <br>
+    </li>
+  </ul>
+  <li>Configuring PerigeeCopy</li>
+  <ul>
+    <li>Select "Configure
+PerigeeCopy" from the Start menu.&nbsp; You'll see this dialog:<br>
+    </li>
+  </ul>
+</ul>
+<br>
+<div style="text-align: center;"><img alt="[PerigeeConfig dialog]"
+ src="config.png" style="width: 559px; height: 482px;"><br>
+<br>
+<div style="text-align: left;">
+<h2>PerigeeCopy Options</h2>
+<ul>
+  <li style="font-weight: bold;">Overwrite - <span
+ style="font-weight: normal;">Specify when existing files should be
+overwritten in a copy operation.&nbsp; If "Prompt" is selected, you
+will be given information about the existing and new files, and asked
+whether the destination file should be overwritten (with an option to
+apply your choice to all files in the job). If "Postpone" is selected,
+files that already exist will be skipped until the end of the job,
+and you will be given the choice to overwrite once all other files
+have been copied.</span></li>
+  <li style="font-weight: bold;"><span style="font-weight: normal;"><span
+ style="font-weight: bold;">Archive Bit -</span> Allows you to copy
+only files and folders with the archive attribute set, and/or to clear
+the source files' archive attributes after copying.&nbsp; These
+features can be used in incremental backups.<br>
+    </span></li>
+  <li><span style="font-style: italic;"></span><span
+ style="font-weight: bold;">Read-Only Bit</span> <br>
+  </li>
+  <ul>
+    <li><span style="font-style: italic;">Overwrite/delete read-only
+files </span>- Clear the read-only, hidden, and system attributes of
+files before attempting to overwrite or delete them.&nbsp; If this
+option is not checked, you may get an "access denied" error when trying
+to overwrite or delete such files.</li>
+    <li><span style="font-style: italic;">Clear read-only bit in copy</span>
+- Clears the read-only attribute of the destination files after
+copying.&nbsp; Useful for copying from CD-ROMs.</li>
+  </ul>
+  <li><span style="font-weight: bold;">Show what I'm about to do </span>-
+For all operations, display a confirmation dialog listing the operation
+about to be performed and the files involved.&nbsp; <br>
+  </li>
+  <li><span style="font-weight: bold;">Prompt for confirmation when
+deleting files - </span>Display a confirmation dialog listing the
+names of the selected files and folders before deleting.&nbsp; This
+will be the only prompt you see; there will be no additional warnings
+about deleting program files, system files, and so forth.</li>
+  <li><span style="font-weight: bold;">Use the Recycle Bin when
+deleting files - </span>Move
+files to the recycle bin instead of deleting them.&nbsp; This applies
+both
+to delete operations and to the source file(s) in a cross-volume move
+operation.&nbsp; Note that, regardless of this setting, files on
+network
+shares never go to the recycle bin. </li>
+  <li><span style="font-weight: bold;">Skip files/directories on errors
+- </span>Do not prompt when a file could not be copied, moved, or
+deleted; simply skip the file and proceed with the job.</li>
+  <ul>
+    <li><span style="font-style: italic;">Note: </span>Regardless of
+whether this option is checked, you will be shown a list of all failed
+files when the job completes, and you'll be given the option to retry
+them then.</li>
+  </ul>
+  <li><span style="font-weight: bold;">Use PerigeeCopy by default for
+file operations </span>- Invoke PerigeeCopy
+instead of Explorer when dragging files and folders or pasting files.<br>
+  </li>
+  <li><span style="font-weight: bold;">Wait for previous job to finish
+before starting another </span>- If you start a job while another one
+is still in progress, the new job will pause until the previous one
+finishes.  This improves throughput when both jobs use the same disk.
+  <li><span style="font-weight: bold;">Don't waste time adding up total
+bytes to copy and get straight to work </span>- Just begin the
+operation immediately, without computing the size of the
+operation.&nbsp; The job may get done a little faster this way, but you
+won't get a progress bar.<br>
+  </li>
+</ul>
+</div>
+<div style="text-align: left;">
+<h2>Contact</h2>
+Please provide feedback <a
+ href="http://jstanley.pingerthinger.com/mail.html">here</a>.<br>
+<br>
+</div>
+</div>
+</body>
+</html>

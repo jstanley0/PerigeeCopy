@@ -1,0 +1,9 @@
+; shellext.def : Declares the module parameters.
+
+LIBRARY      "PerigeeCopy.DLL"
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer	PRIVATE

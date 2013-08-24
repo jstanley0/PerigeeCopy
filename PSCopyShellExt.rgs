@@ -1,0 +1,81 @@
+HKCR
+{
+	Shellext.PSCopyShellExt.1 = s 'PSCopyShellExt Class'
+	{
+		CLSID = s '{80FCA4C0-56BD-406B-864C-0754BB449E76}'
+	}
+	Shellext.PSCopyShellExt = s 'PSCopyShellExt Class'
+	{
+		CLSID = s '{80FCA4C0-56BD-406B-864C-0754BB449E76}'
+		CurVer = s 'Shellext.PSCopyShellExt.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {80FCA4C0-56BD-406B-864C-0754BB449E76} = s 'PSCopyShellExt Class'
+		{
+			ProgID = s 'Shellext.PSCopyShellExt.1'
+			VersionIndependentProgID = s 'Shellext.PSCopyShellExt'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{26B45228-004A-4774-B033-FB9C235C60E3}'
+		}
+	}
+	NoRemove AllFilesystemObjects
+	{
+		NoRemove shellex
+		{
+			NoRemove ContextMenuHandlers
+			{
+				ForceRemove PSCopyShellExt =
+	                   s '{80FCA4C0-56BD-406B-864C-0754BB449E76}'
+			}
+		}
+	}
+	NoRemove Directory
+    {
+        NoRemove Background
+		{
+			NoRemove shellex
+			{
+				NoRemove ContextMenuHandlers
+				{
+	                ForceRemove PSCopyShellExt = 
+		                   s '{80FCA4C0-56BD-406B-864C-0754BB449E76}'
+				}
+			}
+		}
+		NoRemove shellex
+        {
+            NoRemove DragDropHandlers
+            {
+                ForceRemove PSCopyShellExt = 
+                       s '{80FCA4C0-56BD-406B-864C-0754BB449E76}'
+            }
+        }
+    }
+    NoRemove Folder
+    {
+        NoRemove shellex
+        {
+            NoRemove DragDropHandlers
+            {
+                ForceRemove PSCopyShellExt = 
+                       s '{80FCA4C0-56BD-406B-864C-0754BB449E76}'
+            }
+        }
+    }
+    NoRemove Drive
+    {
+        NoRemove shellex
+        {
+            NoRemove DragDropHandlers
+            {
+                ForceRemove PSCopyShellExt = 
+                       s '{80FCA4C0-56BD-406B-864C-0754BB449E76}'
+            }
+        }
+    }
+}

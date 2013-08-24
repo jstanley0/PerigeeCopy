@@ -1,0 +1,458 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\pscopy.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\pscopy.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About PerigeeCopy"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "PerigeeCopy 1.7",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2004-2013 by Jeremy Stanley",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_PSCOPY_DIALOG DIALOGEX 0, 0, 320, 200
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "PerigeeCopy"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,260,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,260,23,50,14
+    LTEXT           "TODO: Place dialog controls here.",IDC_STATIC,50,90,200,8
+END
+
+IDD_CONFIRM_DELETE DIALOGEX 0, 0, 342, 166
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Confirm Delete"
+FONT 8, "Tahoma", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "&Yes",IDOK,98,145,65,14
+    PUSHBUTTON      "&No",IDCANCEL,179,145,65,14
+    LTEXT           "Are you sure you want to permanently delete these files and folders?",IDC_PROMPT,7,7,328,11
+    CONTROL         "List1",IDC_FILE_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SORTASCENDING | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,7,23,328,114
+END
+
+IDD_DIALOG_DELETE_PROGRESS DIALOGEX 0, 0, 327, 161
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Deleting..."
+FONT 8, "Tahoma", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,138,140,50,14
+    LTEXT           "",IDC_LBL_DELETING,7,7,313,13,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",PBS_SMOOTH | WS_BORDER,18,101,292,13
+    LTEXT           "Files",IDC_STATIC,70,59,47,8
+    LTEXT           "Folders",IDC_STATIC,70,77,47,8
+    LTEXT           "Deleted",IDC_STATIC,125,43,60,8
+    LTEXT           "Total",IDC_STATIC,196,43,60,8
+    RTEXT           "",IDC_LBL_FILE_DEL,125,57,60,13,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_FILE_TOTAL,196,56,60,13,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_FOLDER_DEL,125,75,60,13,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_FOLDER_TOTAL,196,75,60,13,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    GROUPBOX        "Delete Progress",IDC_STATIC,7,29,313,100
+END
+
+IDD_DIALOG_MOVE_PROGRESS DIALOGEX 0, 0, 369, 95
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Moving..."
+FONT 8, "Tahoma", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,159,74,50,14
+    LTEXT           "Source",IDC_STATIC,8,8,46,9
+    LTEXT           "Destination",IDC_STATIC,8,29,46,9
+    LTEXT           "",IDC_LBL_SOURCE,60,7,302,12,0,WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_DEST,60,28,302,12,0,WS_EX_STATICEDGE
+    LTEXT           "Progress",IDC_STATIC,8,50,46,9
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,60,49,302,12
+END
+
+IDD_DIALOG_PROGRESS DIALOGEX 0, 0, 369, 193
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Copying..."
+FONT 8, "Tahoma", 400, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,156,172,58,14
+    LTEXT           "Source",IDC_STATIC,8,9,46,9
+    LTEXT           "Destination",IDC_STATIC,8,29,46,9
+    LTEXT           "Current File",IDC_STATIC,60,59,36,8
+    LTEXT           "Entire Job",IDC_STATIC,217,59,32,8
+    LTEXT           "Copied",IDC_STATIC,8,91,44,8
+    LTEXT           "Total",IDC_STATIC,8,107,44,8
+    LTEXT           "Rate",IDC_STATIC,8,123,44,8
+    LTEXT           "Progress",IDC_STATIC,8,139,44,8
+    LTEXT           "File #",IDC_STATIC,8,75,44,8
+    RTEXT           "",IDC_LBL_FILENUM,60,73,140,12,0,WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_SOURCE,60,7,302,12,0,WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_DEST,60,27,302,12,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_FILECNT,217,73,140,12,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_KBCOPIED_FILE,60,89,140,12,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_KBCOPIED_JOB,217,89,140,12,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_KBTOTAL_FILE,60,105,140,12,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_KBTOTAL_JOB,217,105,140,12,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_KB_PER_SEC_FILE,60,121,140,12,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_KB_PER_SEC_JOB,217,121,140,12,0,WS_EX_STATICEDGE
+    CONTROL         "Progress1",IDC_PROGRESS_FILE,"msctls_progress32",PBS_SMOOTH | WS_BORDER,60,137,140,12
+    CONTROL         "Progress2",IDC_PROGRESS_JOB,"msctls_progress32",PBS_SMOOTH | WS_DISABLED | WS_BORDER,217,137,140,12
+    LTEXT           "Time left",IDC_STATIC,8,155,44,8
+    RTEXT           "",IDC_LBL_ETA_FILE,60,153,140,12,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_ETA_JOB,217,153,140,12,0,WS_EX_STATICEDGE
+    LTEXT           "Waiting for another job...",IDC_LABEL_WAIT_PREVIOUS,32,176,84,8,SS_WORDELLIPSIS | NOT WS_VISIBLE
+    PUSHBUTTON      "&Start Now",IDC_BUTTON_START_NOW,223,172,65,14,NOT WS_VISIBLE
+    ICON            "",IDC_INFO_ICON,5,169,20,20,SS_REALSIZEIMAGE | NOT WS_VISIBLE
+END
+
+IDD_ERROR DIALOG  0, 0, 295, 71
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Error"
+FONT 8, "Tahoma"
+BEGIN
+    ICON            "",IDC_ICON1,13,10,20,20
+    PUSHBUTTON      "Cancel",IDCANCEL,48,50,50,14
+    PUSHBUTTON      "&Try Again",IDC_TRYAGAIN,109,50,50,14
+    LTEXT           "(error message)",IDC_PROMPT,41,7,247,36
+    DEFPUSHBUTTON   "&Skip File",IDC_SKIPFILE,170,50,50,14
+    PUSHBUTTON      "Skip &All",IDC_SKIPALL,231,50,50,14
+END
+
+IDD_FAILED_FILES DIALOGEX 0, 0, 348, 166
+STYLE DS_SETFONT | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Skipped Files"
+FONT 8, "Tahoma", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Close",IDCANCEL,182,147,61,14
+    DEFPUSHBUTTON   "&Try Again",IDOK,105,147,61,14
+    EDITTEXT        IDC_EDIT_ERRORS,5,7,335,137,ES_MULTILINE | ES_READONLY | WS_VSCROLL
+END
+
+IDD_OPTIONS_DIALOG DIALOGEX 0, 0, 341, 254
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "PerigeeCopy Options"
+FONT 8, "Tahoma", 0, 0, 0x1
+BEGIN
+    LTEXT           "PerigeeCopy v1.7    (C) 2004-2013 by Jeremy Stanley",IDC_STATIC,7,5,328,8
+    GROUPBOX        "Overwrite",IDC_FRAME_OVERWRITE,7,18,130,96
+    CONTROL         "&Always overwrite",IDC_RADIO_OVERWRITE_ALWAYS,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,24,31,96,10
+    CONTROL         "N&ever overwrite",IDC_RADIO_OVERWRITE_NEVER,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,24,44,96,10
+    CONTROL         "Overwrite if &newer",IDC_RADIO_OVERWRITE_NEWER,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,24,57,96,10
+    CONTROL         "Make a uni&que name",IDC_RADIO_OVERWRITE_MAKE_UNIQUE_NAME,
+                    "Button",BS_AUTORADIOBUTTON,24,70,81,10
+    CONTROL         "Pro&mpt",IDC_RADIO_OVERWRITE_PROMPT,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,24,83,96,10
+    CONTROL         "Pos&tpone",IDC_RADIO_OVERWRITE_POSTPONE,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,24,96,96,10
+    GROUPBOX        "Archive Bit (applies to copy jobs only)",IDC_FRAME_ARCHIVE,148,18,187,46
+    CONTROL         "Only copy &files/folders with the archive bit set",IDC_CHECK_ARCHIVE_ONLY,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,157,31,171,9
+    CONTROL         "C&lear archive bit in source file after copying",IDC_CHECK_CLEAR_ARCHIVE_BIT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,157,46,169,9
+    GROUPBOX        "Read-Only Bit",IDC_FRAME_OPTIONS,148,68,187,46
+    CONTROL         "Overwrite/delete &read-only files",IDC_CHECK_OPT_OVERWRITE_READ_ONLY,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,157,81,166,9
+    CONTROL         "Clear read-only &bit in copy",IDC_CHECK_CLEAR_READ_ONLY_BIT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,157,96,166,9
+    CONTROL         "&Show what I'm about to do (move, copy, delete, or recycle) before I do it",IDC_PROMPT_DEBUG,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,7,121,328,10
+    CONTROL         "Prompt for confirmation when &deleting files (only once; does not prompt for system files, etc.)",IDC_PROMPT_CONFIRM_DELETE,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,7,136,328,10
+    CONTROL         "&Use the Recycle Bin when deleting files (applies to cross-volume move source as well)",IDC_PROMPT_RECYCLE,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,7,151,328,10
+    CONTROL         "S&kip files/directories on errors (you will be given a list and prompted to retry at the end of the job)",IDC_CHECK_SKIP_ERROR_FILES,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,166,328,10
+    CONTROL         "Use &PerigeeCopy by default for file operations",IDC_CHECK_USE_PERIGEECOPY_BY_DEFAULT,
+                    "Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,7,181,328,10
+    CONTROL         "&Wait for an existing PerigeeCopy job to finish before starting another",IDC_CHECK_WAIT_FOR_PREVIOUS_JOBS,
+                    "Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,7,196,328,10
+    CONTROL         "Don't waste time adding up total bytes to copy and &get straight to work (no overall progress bar)",IDC_CHECK_SKIP_INVENTORY,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,211,328,11
+    DEFPUSHBUTTON   "OK",IDOK,94,231,68,14
+    PUSHBUTTON      "Cancel",IDCANCEL,178,231,68,14
+END
+
+IDD_OVERWRITE_PROMPT DIALOGEX 0, 0, 292, 165
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Confirm File Replace"
+FONT 8, "Tahoma", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "&Yes",IDC_BUTTON_YES,29,127,57,14
+    PUSHBUTTON      "&No",IDC_BUTTON_NO,92,127,57,14
+    PUSHBUTTON      "&Keep Newer File",IDC_NEWER,155,127,62,14
+    CONTROL         "&Apply this setting to all files",IDC_CHECK_APPLY_TO_ALL,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,31,145,252,11
+    CONTROL         "This folder already contains a file named ",IDC_TITLE_LINE,
+                    "Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,7,273,11
+    LTEXT           "Would you like to replace the existing file...",IDC_STATIC,7,30,179,9
+    LTEXT           "...with this one?",IDC_STATIC,7,79,138,9
+    LTEXT           "(size)",IDC_SIZE1,53,46,214,12
+    LTEXT           "(date)",IDC_DATE1,53,59,214,12
+    LTEXT           "(size)",IDC_SIZE2,53,93,214,12
+    LTEXT           "(date)",IDC_DATE2,53,106,214,12
+    ICON            "",IDC_ICON1,19,48,21,20
+    ICON            "",IDC_ICON2,19,94,21,20
+    PUSHBUTTON      "&Rename Target",IDC_BUTTON_MAKE_UNIQUE_NAME,223,127,62,14
+END
+
+IDD_ELEVATE DIALOGEX 0, 0, 326, 73
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Administrator Privileges Required"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Continue",IDOK,57,52,60,14
+    PUSHBUTTON      "Cancel",IDCANCEL,209,52,60,14
+    LTEXT           "You need administrator privileges to perform this action.",IDC_PROMPT,35,7,284,34
+    PUSHBUTTON      "&Skip",IDIGNORE,133,52,60,14
+    ICON            "",IDC_WARNING,7,7,20,20
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,6,0,0
+ PRODUCTVERSION 1,6,0,0
+ FILEFLAGSMASK 0x1fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Perigee Software"
+            VALUE "FileDescription", "PerigeeCopy application"
+            VALUE "FileVersion", "1, 6, 0, 0"
+            VALUE "InternalName", "pscopy"
+            VALUE "LegalCopyright", "Copyright (C) 2004-2010 by Jeremy Stanley"
+            VALUE "OriginalFilename", "pscopy.exe"
+            VALUE "ProductName", "PerigeeCopy"
+            VALUE "ProductVersion", "1, 6, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PSCOPY_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_OPTIONS_DIALOG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 245
+    END
+
+    IDD_ELEVATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 319
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 66
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About pscopy..."
+    IDS_COULD_NOT_READ_DIRECTORY 
+                            "Could not enumerate the contents of ""%s"": %s"
+    IDS_ELEVATION_REQUIRED_TO_DELETE_FOLDER 
+                            "You need administrator privileges to delete the folder ""%s""."
+    IDS_ELEVATION_REQUIRED_TO_READ_FOLDER 
+                            "You need administrator privileges to copy the contents of ""%s""."
+    IDS_ELEVATION_REQUIRED_TO_MOVE_FILE 
+                            "You need administrator privileges to move the file ""%s""."
+    IDS_ELEVATION_REQUIRED_TO_COPY_FILE 
+                            "You need administrator privileges to copy the file ""%s""."
+    IDS_PROJNAME            "shellext"
+    IDS_ELEVATION_REQUIRED_TO_DELETE_FILE 
+                            "You need administrator privileges to delete the file ""%s""."
+    IDS_ELEVATION_REQUIRED_TO_CREATE_FILES_IN_FOLDER 
+                            "You need administrator privileges to copy files into ""%s""."
+    IDS_MOVE_DEST_IS_SUBFOLDER_OF_SOURCE 
+                            "Couldn't move ""%s"": The destination is a subfolder of the source folder."
+    IDS_COPY_DEST_IS_SUBFOLDER_OF_SOURCE 
+                            "Couldn't copy ""%s"": The destination is a subfolder of the source folder."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MB_SUFFIX           " MB "
+    IDS_KB_PER_SEC_SUFFIX   " KB/sec "
+    IDS_PREPARING_TO_COPY_FILES "Preparing to copy files..."
+    IDS_PREPARING_TO_MOVE_FILES "Preparing to move files..."
+    IDS_COPYING_FILES       "Copying..."
+    IDS_MOVING_FILES        "Moving..."
+    IDS_PREPARING_TO_DELETE_FILES "Preparing to delete files..."
+    IDS_DELETING_FILES      "Deleting..."
+    IDS_COULD_NOT_COPY_FILE "Could not copy file ""%s"" to ""%s"": %s"
+    IDS_COULD_NOT_MOVE_FILE "Could not move file ""%s"" to ""%s"": %s"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_COULD_NOT_DELETE_FILE "Could not delete file ""%s"": %s"
+    IDS_COULD_NOT_CREATE_DIRECTORY "Could not create directory ""%s"": %s"
+    IDS_COULD_NOT_REMOVE_DIRECTORY "Could not remove directory ""%s"": %s"
+    IDS_WARN_COULD_NOT_REMOVE_DIR 
+                            "Warning: could not remove directory ""%s"": %s"
+    IDS_WARN_COULD_NOT_REMOVE_FILE "Warning: could not remove file ""%s"": %s"
+    IDS_GENERIC_ERROR       "%s: %s"
+    IDS_KB_SUFFIX           " KB "
+    IDS_WAITING             "Waiting..."
+    IDS_COL_FILENAME        "Filename"
+    IDS_CONFIRM_COPY        "Confirm Copy"
+    IDS_CONFIRM_MOVE        "Confirm Move"
+    IDS_CONFIRM_COPY_PROMPT_TEMPL 
+                            "Are you sure you want to copy these files into %s?"
+    IDS_CONFIRM_MOVE_PROMPT_TEMPL 
+                            "Are you sure you want to move these files into %s?"
+    IDS_FULLSTOP            "."
+    IDS_CONFIRM_RECYCLE     "Confirm Recycle"
+    IDS_CONFIRM_RECYCLE_PROMPT 
+                            "Are you sure you want to move these files and folders to the Recycle Bin?"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NOT_STANDALONE      "This program is launched by the PerigeeCopy.dll shell extension and should not be run directly."
+    IDS_MINUTES_ETA_TEMPLATE "%d minute(s)"
+    IDS_SECONDS_ETA_TEMPLATE "%d second(s)"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\pscopy.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

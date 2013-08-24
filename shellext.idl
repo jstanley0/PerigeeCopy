@@ -1,0 +1,58 @@
+// shellext.idl : IDL source for PerigeeCopy.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (shellext.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(F7D80D94-09AE-4660-BEC1-C8E74EC0361E),
+		dual,
+		helpstring("IPSCopyShellExt Interface"),
+		pointer_default(unique)
+	]
+	interface IPSCopyShellExt : IDispatch
+	{
+	};
+	
+	[
+		object,
+		uuid(CC922D57-E93A-4895-8553-9C52C47BCB87),
+		dual,
+		helpstring("IPSDeleteShellExt Interface"),
+		pointer_default(unique)
+	]
+	interface IPSDeleteShellExt : IDispatch
+	{
+	};
+
+[
+	uuid(26B45228-004A-4774-B033-FB9C235C60E3),
+	version(1.0),
+	helpstring("shellext 1.0 Type Library")
+]
+library SHELLEXTLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(80FCA4C0-56BD-406B-864C-0754BB449E76),
+		helpstring("PSCopyShellExt Class")
+	]
+	coclass PSCopyShellExt
+	{
+		[default] interface IPSCopyShellExt;
+	};
+	
+	[
+		uuid(3650CFF3-5EE5-44B7-A5C8-5B29A375B0E7),
+		helpstring("PSDeleteShellExt Class")
+	]
+	coclass PSDeleteShellExt
+	{
+		[default] interface IPSDeleteShellExt;
+	};
+};
