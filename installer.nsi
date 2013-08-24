@@ -26,7 +26,7 @@ RequestExecutionLevel Admin
 ; Welcome page
 !insertmacro MUI_PAGE_WELCOME
 ; License page
-!insertmacro MUI_PAGE_LICENSE "license.txt"
+!insertmacro MUI_PAGE_LICENSE "LICENSE"
 ; Components page
 !insertmacro MUI_PAGE_COMPONENTS
 ; Directory page
@@ -109,7 +109,7 @@ Section "Source Code" SEC02
   SetOutPath "$INSTDIR\src"
   File "dlldata.c"
   File "installer.nsi"
-  File "license.txt"
+  File "LICENSE"
   File "popen32.cpp"
   File "popen32.h"
   File "pscopy.rc2"
@@ -212,7 +212,7 @@ Section Uninstall
 
   Delete "$INSTDIR\src\dlldata.c"
   Delete "$INSTDIR\src\installer.nsi"
-  Delete "$INSTDIR\src\license.txt"
+  Delete "$INSTDIR\src\LICENSE"
   Delete "$INSTDIR\src\popen32.cpp"
   Delete "$INSTDIR\src\popen32.h"
   Delete "$INSTDIR\src\pscopy.rc2"
